@@ -1,0 +1,96 @@
+body {
+    background-color:white;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.image{
+    height:40px;
+    width:50px;
+    border-radius:25%;
+    border:5px solid  #C29C9A  ;
+}
+nav {
+    background-color: #C29C9A; /* Light Lavender */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family:'Arial', sans-serif;
+   
+}
+
+li {
+    margin: 0 15px;
+}
+nav a {
+    color: white; 
+    text-decoration: none;
+    font-size:20px;
+    transition:color 0.3;
+}
+
+nav a:hover {
+    color: black; 
+    cursor:pointer;
+}
+
+/* welcome page ko styling */
+.welcome-section {
+    text-align: center;
+    padding: 50px;
+}
+.welcome-message {
+    text-align: center;
+    padding: 50px;
+   
+}
+
+
+.cta-button{
+    display:inline-block;
+    padding:10px 20px;
+    background-color:white;
+    text-decoration:none;
+    border-radius:5px;
+    border:2px solid black;
+}
+
+.cta-button:hover{
+    background-color:blue;
+}
+
+.image-slider{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    white-space:nowrap;
+    padding:10px;
+    background-color:rgb(0, 0, 0);
+    text-align:center;
+    overflow-x:hidden;
+}
+.image-slider img{
+    max-width:100%;
+    max-height:100px;
+    margin-right:10px;
+}
+
+
+.left-content,right-content{
+    display:inline-block;
+    vertical-align:top;
+}
+
+.left-content p,.right-content p{
+    color:white;
+    margin:0;
+
+}
