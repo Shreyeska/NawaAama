@@ -41,6 +41,19 @@ app.set('view engine','ejs');
 router.get('/login', function(req, res, next){
   res.render('login',{title: "Login/Signup"})
 })
+/* get first trimester page */
+router.get('/ftrim', function(req, res, next){
+  res.render('ftrim',{title: 'First Trimester'})
+})
+/* get second trimester page */
+router.get('/strim', function(req, res, next){
+  res.render('strim',{title: 'Second Trimester'})
+})
+/* get third trimester page */
+router.get('/ttrim', function(req, res, next){
+  res.render('ttrim',{title: 'Third Trimester'})
+})
+
 
 //register user
 router.get('/signup',(req, res)=>{
