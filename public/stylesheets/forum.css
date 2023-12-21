@@ -1,0 +1,81 @@
+/* public/stylesheets/forum.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header, footer {
+    background-color: #C29C9A;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    
+}
+
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#forum {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.thread {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+#new-thread-form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+body h1 {
+    font-size:20px;
+}
+
+#community {
+    color: black;
+}
+
+.comment {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.comment p {
+    margin: 5px 0;
+}
+
+/* Add any additional styles you need */
