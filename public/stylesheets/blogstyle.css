@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 10px; 
+    background-image: url(/images/blogbg.png);
+    background-size: cover;
+}
+
+#blog_name{
+    counter-reset: level1 4 level2 0 level3 0;
+    text-align: center;
+    margin-left:300px;
+    padding-top: 250px;
+    color:white;
+    font-size: 60px;
+  }
+
+.hero_section1 {
+        /* padding: 30px; */
+        font-size: 70px;        
+        background-image: url(/images/blog_banner1.png);
+        height: 630px;
+  }
+  .hero_section2 {
+    /* padding: 30px; */
+    font-size: 70px;        
+    background-image: url(/images/blog_banner2.png);
+    height: 630px;
+}
+  .hero_section3 {
+    /* padding: 30px; */
+    font-size: 70px;        
+    background-image: url(/images/blog_banner3.png);
+    height: 630px;
+}
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  
+  /* Add a card effect for articles */
+  .card {
+     opacity: 0.8;
+     padding: 20px;
+     margin-top: 20px;
+     background-color: pink;
+     margin: 30px;
+     /* background-color: transparent; */
+     ;
+  }
+  
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    
+    text-align: center;
+    background: #ddd;
+   
+  }
+
+#details{
+    text-align: justify;
+    font-size:20px;
+    margin: 20px;
+    color: white;
+  }
+.leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.blogs-section{
+    width: 100%;
+    padding: 50px 5vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 80px;
+}
+
+.blog-image{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

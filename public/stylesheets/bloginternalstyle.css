@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+  background-color: #000;
+  background-image: url('/images/blogbg.png');
+  padding: 0px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav{
+  background-color: #C29C9A;
+  margin: 0;
+  padding-top: 0;
+  font-size: 20px;
+}
+.nav-link{
+  color: #FFF;
+}
+.nav-link:hover{
+  color: #000;
+}
+
+.nav-item-logo{
+  width: 2px;
+  margin-right: auto;
+  height: 2px;
+  margin-bottom: auto;
+}
+.logo{
+  width: 80px; /* Adjust the width according to your preference */
+  height: 100px; 
+  margin-bottom: auto;/* Maintain aspect ratio */
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins;
+}
+
+
+/* Blog content */
+.blog_content_image{
+    height:100%;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(10px 10px 20px);
+}
+.row{
+    margin: auto;
+    position: relative;
+}
+
+h1{
+    text-align: center;
+    font-family: poppins;
+    font-size: 70px;
+    color: black;
+
+}
+
+.article{
+    text-align: center;
+    margin: auto;
+    font-family: poppins;
+    background-color: rgba(255, 255, 255, 0.5); 
+    line-height: 150%;
+    text-align: justify;
+    padding: 10px 10px 10px 10px;
+}
