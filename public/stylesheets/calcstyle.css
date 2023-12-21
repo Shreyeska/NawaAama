@@ -2,28 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:ital,wght@1,700&display=swap');
 
-body {
-  padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-family: 'Poppins', sans-serif;
-}
-
-a{
-  color: #000;
-}
-
 .nav{
-  background-color: #FFD9c0;
+  background-color: #C29C9A;
   margin: 0;
   padding-top: 0;
+  font-size: 20px;
 }
 .nav-link{
+  color: #FFF;
+}
+.nav-link:hover{
   color: #000;
 }
+
 .container{
    padding: 10px;
    border: 5px solid #908b8a;
    border-radius: 20px;
+   
 }
 
 #result{
@@ -62,7 +58,8 @@ p{
 .mile{
  font-size: 25px;
 }
+
 .bcg{
- background-image: url(/public/images/resultbcg.png);
-  
+  background-image: url(/images/resultbcg.png);
+   background-size: cover;
 }
