@@ -53,6 +53,16 @@ router.get('/strim', function(req, res, next){
 router.get('/ttrim', function(req, res, next){
   res.render('ttrim',{title: 'Third Trimester'})
 })
+// get forum
+router.get('/forum', async function (req, res, next) {
+  try {
+    const comments = await Comment.find();
+    res.render('forum', { title: "forum", comments });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 
 //register user
