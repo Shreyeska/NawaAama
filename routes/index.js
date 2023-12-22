@@ -3,10 +3,12 @@ const { ObjectId } = require('mongodb');
 // Multer setup
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
+    console.log(req.files);
     cb(null, 'public/blogs')
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname)
+    console.log(file.originalname);
   }
 })
 var upload = multer({ storage: storage })
@@ -151,7 +153,7 @@ router.post('/save', upload.single("files"), async function (req, res) {
     session = req.session
 
    // console.log("sesion ",req.session.user)
-    console.log(req.body, req.file)
+    console.log("image", req)
     // convert author id to objectId
 
     const auth_user = sessionStorage.getItem("user");
@@ -166,7 +168,7 @@ router.post('/save', upload.single("files"), async function (req, res) {
       content: req.body.content,
       image: "blogs/" + req.file?.originalname,
       author_id: author_id
-    })
+    });
 res.redirect('/')
 })
 
