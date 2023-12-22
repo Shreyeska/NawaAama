@@ -1,5 +1,7 @@
 const multer = require('multer')
 const { ObjectId } = require('mongodb');
+const Comment = require('../models/comment');
+
 // Multer setup
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -147,8 +149,6 @@ router.get('/', async function(req, res, next) {
 });
 
 
-
-
 // CRUD operation on blogs
 // add blogs
 router.get('/addblogs', function(req, res, next) {
@@ -239,9 +239,31 @@ router.get('/community', function(req, res, next){
   res.render('Community',{title: "Community"})
 });
 
-router.get('/forum', function(req, res, next){
-  res.render('forum')
-});
 module.exports = router;
 
+//save route
+router.post('/save',  async function (req, res) {
+  session = req.session
+  const auth_user = sessionStorage.getItem("user");
+  console.log("auth user",auth_user)
+  const author_id = auth_user ?auth_user._id  : new  ObjectId('5fc7c70d6c651f0024a3e1f9')
+  await Comment.create({
+    title: req.body.title,
+    content: req.body.content,
+    image: "blogs/" + req.file?.originalname,
+    author_id: author_id
+  })
+res.redirect('/')
+})
 
+//add comment route
+router.post('/add-comment', async function (req, res) {
+  session = req.session
+  const auth_user = sessionStorage.getItem("user");
+  const author_id = auth_user ?auth_user._id  : new  ObjectId('5fc7c70d6c651f0024a3e1f9')
+  await Comment.create({
+    username: req.body.username,
+    content: req.body.content
+  })
+res.redirect('/')
+})
