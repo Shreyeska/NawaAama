@@ -1,5 +1,7 @@
 const multer = require('multer')
 const { ObjectId } = require('mongodb');
+const Comment = require('../models/comment');
+
 // Multer setup
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -55,6 +57,16 @@ router.get('/strim', function(req, res, next){
 router.get('/ttrim', function(req, res, next){
   res.render('ttrim',{title: 'Third Trimester'})
 })
+// get forum
+router.get('/forum', async function (req, res, next) {
+  try {
+    const comments = await Comment.find();
+    res.render('forum', { title: "forum", comments });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 
 //register user
@@ -137,8 +149,6 @@ router.get('/', async function(req, res, next) {
   res.render('index', { title: 'Blogs' , blogList: blogs});
 
 });
-
-
 
 
 // CRUD operation on blogs
@@ -231,9 +241,31 @@ router.get('/community', function(req, res, next){
   res.render('Community',{title: "Community"})
 });
 
-router.get('/forum', function(req, res, next){
-  res.render('forum')
-});
 module.exports = router;
 
+//save route
+router.post('/save',  async function (req, res) {
+  session = req.session
+  const auth_user = sessionStorage.getItem("user");
+  console.log("auth user",auth_user)
+  const author_id = auth_user ?auth_user._id  : new  ObjectId('5fc7c70d6c651f0024a3e1f9')
+  await Comment.create({
+    title: req.body.title,
+    content: req.body.content,
+    image: "blogs/" + req.file?.originalname,
+    author_id: author_id
+  })
+res.redirect('/')
+})
 
+//add comment route
+router.post('/add-comment', async function (req, res) {
+  session = req.session
+  const auth_user = sessionStorage.getItem("user");
+  const author_id = auth_user ?auth_user._id  : new  ObjectId('5fc7c70d6c651f0024a3e1f9')
+  await Comment.create({
+    username: req.body.username,
+    content: req.body.content
+  })
+res.redirect('/')
+})
