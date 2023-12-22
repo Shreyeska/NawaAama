@@ -223,6 +223,15 @@ router.get('/post/:id', async(req, res) => {
     console.log(error);
 } // Assuming 'blogsre.ejs' or 'blogsre.html' is in your 'views' directory
 });
+
+//get the community page
+router.get('/community', function(req, res, next){
+  res.render('Community',{title: "Community"})
+});
+
+router.get('/forum', function(req, res, next){
+  res.render('forum')
+});
 module.exports = router;
 
 
